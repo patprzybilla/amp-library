@@ -28,9 +28,10 @@ class StatisticsPass extends BasePass
     function pass()
     {
         $html_tag = $this->q->find($this->context->getErrorScope());
-
+        $stats_comment = $this->options['add_stats_html_comment'];
+        $tag_count = $html_tag->count();
         // If we don't want statistics or couldn't find tag exit
-        if (empty($this->options['add_stats_html_comment']) || empty($html_tag->count())) {
+        if (empty($stats_comment) || empty($tag_count)) {
             return [];
         }
 

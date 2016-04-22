@@ -197,7 +197,8 @@ abstract class BasePass
 
         $qp = $this->q->branch();
         $head = $qp->top()->find('head');
-        if (empty($head->count())) {
+        $head_count = $head->count();
+        if (empty($head_count)) {
             return false;
         }
 

@@ -81,7 +81,8 @@ class ParsedAttrSpec
      */
     public function validateUrlAndProtocol(Context $context, $attr_name, $url, TagSpec $tagspec, $spec_url, SValidationResult $validation_result)
     {
-        if (empty(trim($url))) {
+        $trimmed_url = trim($url);
+        if (empty($trimmed_url)) {
             $context->addError(ValidationErrorCode::MISSING_URL,
                 [$attr_name, ParsedTagSpec::getDetailOrName($tagspec)], $spec_url, $validation_result, $attr_name);
             return;
@@ -124,7 +125,8 @@ class ParsedAttrSpec
             /** @var string $segment */
             foreach ($segments as $segment) {
                 $key_value = explode(' ', trim($segment));
-                if (!empty(trim($key_value[0]))) {
+                $trimmed_key_value = trim($key_value[0]);
+                if (!empty($trimmed_key_value)) {
                     $maybe_uris[trim($key_value[0])] = 1;
                 }
             }
