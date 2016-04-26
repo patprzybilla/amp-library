@@ -10,7 +10,7 @@
     "license": "Apache-2.0",
     "keywords": ["Drupal", "AMP", "mobile"],
     "require" : {
-        "php" : ">=5.5.0",
+        "php" : ">=5.4.0",
         "querypath/QueryPath": ">=3.0.0",
         "sebastian/diff": "~1.2",
         "symfony/console": ">=2.7.0",
